@@ -1,5 +1,6 @@
 #!/bin/sh -ex
 #
+: ${SANDLY_DOCKERIAN:=$(command -v docker)}
 
 generate_app(){
 : "${1:?no app specified}"
@@ -36,7 +37,7 @@ select_random_uid(){
 	user_id=\$uid
 
 	echo \$container_name uid=\$user_id
-	docker run \\
+	$SANDLY_DOCKERIAN run \\
 		--rm \\
 		-d \\
 		--name \${container_name:?no container name} \\
