@@ -1,0 +1,4 @@
+/usr/lib64/firefox/firefox
+/usr/lib64/thunderbird/thunderbird
+/usr/bin/wireshark
+/usr/bin/qtcreator
