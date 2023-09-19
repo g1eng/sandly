@@ -19,7 +19,7 @@ Sandly does not provide its own images or additional layers for target applicati
 * xhost
 * XWayland (for wayland users)
 
-[image and wrapper script builder]
+[builder for the image and wrapper scripts]
 
 * dockerd
 * GNU make
