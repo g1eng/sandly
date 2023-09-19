@@ -23,6 +23,7 @@ Sandly does not provide its own images or additional layers for target applicati
 
 * dockerd
 * GNU make
+* shells and coreutils
 
 #### Attention
 
@@ -31,7 +32,7 @@ Sandly does not provide its own images or additional layers for target applicati
 
 # Installation
 
-1. write `app_list.txt`
+### 1. write `app_list.txt`
 
 Sandly does not provide its prebuilt images and you need to build you own skeleton image.
 The build script needs to parse `app_list.txt` in the top of the repository. `app_list.txt` is a simple list of applications to be sandboxed, and it is a set of full path of the application binaries. 
@@ -40,7 +41,7 @@ Be careful not to specify application wrapper script such as `/usr/bin/firefox` 
 
 For example, see `app_list_sample.txt`.
 
-2. build images, generate wrapper scripts, install them
+### 2. build images, generate wrapper scripts, install them
 
 ```shell-session
 $ make
@@ -54,7 +55,7 @@ $ SANDLY_DOCKERIAN=/usr/bin/podman make
 $ PREFIX=$HOME/local make install
 ```
 
-3. ensure your desktop adopts window projection of apps
+### 3. ensure your desktop adopts window projection of apps
 
 (For wayland users: install XWayland at first.)
 
@@ -73,13 +74,13 @@ xhost +local\$DISPLAY
 EOS
 ```
 
-4. check rootless docker is running
+### 4. check rootless docker is running
 
 ```shell-session
 $ ps awux  | grep -E \^$USER\ \.\+dockerd\$
 ```
 
-5. play
+### 5. play
 
 ```shell-session
 $ $HOME/local/firefox
